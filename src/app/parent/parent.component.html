@@ -1,0 +1,23 @@
+<div class="container p-4 bg-danger">
+
+  <h1>hello from parent</h1>
+
+  <!-- هذا للكتابة من parent -->
+  <input 
+    class="form-control mb-3"
+    [(ngModel)]="message"
+    placeholder="write from parent"
+  >
+
+  <!-- هذا يعرض فقط من child -->
+  <h2>
+    data from child is {{ childData }}
+  </h2>
+
+  <!-- نرسل فقط message -->
+  <app-child 
+    [data]="message"
+    (send)="onReceive($event)">
+  </app-child>
+
+</div>
